@@ -1,3 +1,6 @@
+# Installing magerun
+curl -O https://files.magerun.net/n98-magerun2.phar && chmod +x ./n98-magerun2.phar
+
 Paste `local.xml` in app/etc/ for **n98 mage run**
 then enter your credentials of `env.php` into `local.xml` fields.
 
