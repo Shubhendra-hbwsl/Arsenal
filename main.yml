@@ -2,7 +2,7 @@ name: Deployment Workflow
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
 
 jobs:
   deployment-job:
@@ -12,11 +12,11 @@ jobs:
       - name: SSH into the machine and run some commands
         uses: appleboy/ssh-action@master
         with:
-          host: 34.217.174.173
-          username: fhc-usa
+          host: 34.222.65.59
+          username: demo
           key:  ${{ secrets.SH_SSH }}
           port: 22
           script: |
-            cd /home/fhc-usa/webapps/fhc-usa
+            cd /home/demo/webapps/furniture-hyva
             echo "Running deployment script on the server"
             sh deployment.sh
