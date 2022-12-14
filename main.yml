@@ -1,0 +1,22 @@
+name: Deployment Workflow
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  deployment-job:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH into the machine and run some commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: 34.217.174.173
+          username: fhc-usa
+          key:  ${{ secrets.SH_SSH }}
+          port: 22
+          script: |
+            cd /home/fhc-usa/webapps/fhc-usa
+            echo "Running deployment script on the server"
+            sh deployment.sh
