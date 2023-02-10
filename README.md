@@ -32,7 +32,7 @@ foreach($categories as $category){
 $catName = $category->getName();
 $catId = $category->getId();
 echo "$catId ---> $catName \n";
-if($catId <= 2 || $cat == 9079) continue;
+if($catId <= 2 || $catId == 9079) continue;
 // Skip the root category and master catalog category(Generated from akeneo)
 
 $category->delete();
