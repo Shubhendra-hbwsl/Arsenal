@@ -39,3 +39,6 @@ $category->delete();
 }
 
 ```
+## Mass Deleting Attributes
+
+upload the `Mex_ProductAttributeMassAction` in the `app/` and redeploy.
