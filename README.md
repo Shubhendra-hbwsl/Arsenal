@@ -7,6 +7,9 @@
 Paste `local.xml` in app/etc/ for **n98 mage run**
 then enter your credentials of `env.php` into `local.xml` fields.
 
+## Remove Customer and Sales data
+`./n98-magerun.phar db:dump –strip="@sales @customer @stripped"`
+
 ## Remove only products.
 `./n98-magerun2.phar db:dump --strip="catalog_product*"`
 
