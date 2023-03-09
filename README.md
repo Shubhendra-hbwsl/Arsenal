@@ -62,4 +62,6 @@ $category->delete();
 ```
 ## Mass Deleting Attributes
 
-upload the `Mex_ProductAttributeMassAction` in the `app/` and redeploy.
+upload the `Mex_ProductAttributeMassAction`(provided in this repo) in the `app/` and redeploy.
+or use 
+`deleteAttributeSetAndAttributes.sql`
