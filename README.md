@@ -43,7 +43,7 @@ $di->get(\Magento\Catalog\Model\Category::class)->getCollection()->addAttributeT
 
 ## Get Category ID and Category name
 Below code snippets fetches and deletes all the categories except `root` and `master catalog category`.
-NOTE: `master catalog category` can have different `categoryId` than the one specified here, comment out the delete function and get the appropriate id for master catalog.
+NOTE: `master catalog category` can have different `categoryId` than the one specified here, comment out the delete function and get the appropriate id for master catalog. `9079` is categoryId of `master catalog` category of akeneo, it MAY NOT be same for every system.
 ```
 $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
 $categoryCollection = $objectManager->get('\Magento\Catalog\Model\ResourceModel\Category\CollectionFactory'); $categories = $categoryCollection->create(); $categories->addAttributeToSelect('*');
