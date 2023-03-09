@@ -12,6 +12,21 @@ then enter your credentials of `env.php` into `local.xml` fields.
 
 ## Remove only products.
 `./n98-magerun2.phar db:dump --strip="catalog_product*"`
+This will create a database dump without any products, import this into current database
+and run
+```
+INSERT INTO catalog_product_link_type (link_type_id, code) VALUES
+(1, 'relation'),
+(3, 'super'),
+(4, 'up_sell'),
+(5, 'cross_sell');
+INSERT INTO catalog_product_link_attribute (product_link_attribute_id, link_type_id, product_link_attribute_code, data_type) VALUES
+(1, 1, 'position', 'int'),
+(2, 4, 'position', 'int'),
+(3, 5, 'position', 'int'),
+(4, 3, 'position', 'int'),
+(5, 3, 'qty', 'decimal');
+```
 
 ## Remove categories
 Run n98 dev console.
